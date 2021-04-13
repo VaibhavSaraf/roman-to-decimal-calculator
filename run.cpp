@@ -98,7 +98,7 @@ ll divide(vector<ll> &nums)
 
 int main()
 {
-    OJ;
+    // OJ;
 
     int opt;
     string input;
