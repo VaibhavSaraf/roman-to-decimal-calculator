@@ -66,9 +66,17 @@ ll roman_to_decimal(string roman)
 int main()
 {
     OJ;
+
+    int opt;
     string input;
+    cout << "1. Convert to decimal number \n2. Add \n3. Subtract \n4. Multiply \n5. Divide";
+    cout << "Enter the option: ";
+    cin >> opt;
+    cout << endl;
+    cout << "Enter numbers: ";
     cin >> input;
-    // cout << input;
+    cout << endl;
+
     vector<string> tokens;
     vector<ll> nums;
     stringstream check1(input);
@@ -81,7 +89,49 @@ int main()
 
     for (auto x : tokens)
     {
-        cout << x << " : " << roman_to_decimal(x) << "\n";
+        nums.push_back(roman_to_decimal(x));
+    }
+
+    if (opt == 1)
+    {
+        for (auto x : nums)
+            cout << x << " ";
+        cout << "\n";
+    }
+    else if (opt == 2)
+    {
+        cout << accumulate(nums.begin(), nums.end(), 0) << "\n";
+    }
+    else if (opt == 3)
+    {
+        ll x = nums[0];
+        for (int i = 1; i < nums.size(); i++)
+        {
+            x = x - nums[i];
+        }
+        cout << x << "\n";
+    }
+    else if (opt == 4)
+    {
+        ll ans = 1;
+        for (auto x : nums)
+        {
+            ans *= x;
+        }
+        cout << ans << "\n";
+    }
+    else if (opt == 5)
+    {
+        ll ans = nums[0];
+        for (int i = 1; i < nums.size(); i++)
+        {
+            ans = ans / nums[i];
+        }
+        cout << ans << "\n";
+    }
+    else
+    {
+        cout << "Wrong Option";
     }
 
     return 0;
