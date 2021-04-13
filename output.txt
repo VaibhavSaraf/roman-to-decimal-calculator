@@ -4,4 +4,4 @@
 4. Multiply 
 5. DivideEnter the option: 
 Enter numbers: 
-1102
+5

@@ -63,6 +63,39 @@ ll roman_to_decimal(string roman)
     return value;
 }
 
+ll sum(vector<ll> &nums)
+{
+    return accumulate(nums.begin(), nums.end(), 0);
+}
+
+ll substract(vector<ll> &nums)
+{
+    ll x = nums[0];
+    for (int i = 1; i < nums.size(); i++)
+    {
+        x = x - nums[i];
+    }
+    return x;
+}
+ll multiply(vector<ll> &nums)
+{
+    ll ans = 1;
+    for (auto x : nums)
+    {
+        ans *= x;
+    }
+    return ans;
+}
+ll divide(vector<ll> &nums)
+{
+    ll ans = nums[0];
+    for (int i = 1; i < nums.size(); i++)
+    {
+        ans = ans / nums[i];
+    }
+    return ans;
+}
+
 int main()
 {
     OJ;
@@ -100,38 +133,23 @@ int main()
     }
     else if (opt == 2)
     {
-        cout << accumulate(nums.begin(), nums.end(), 0) << "\n";
+        cout << sum(nums) << "\n";
     }
     else if (opt == 3)
     {
-        ll x = nums[0];
-        for (int i = 1; i < nums.size(); i++)
-        {
-            x = x - nums[i];
-        }
-        cout << x << "\n";
+        cout << substract(nums) << "\n";
     }
     else if (opt == 4)
     {
-        ll ans = 1;
-        for (auto x : nums)
-        {
-            ans *= x;
-        }
-        cout << ans << "\n";
+        cout << multiply(nums) << "\n";
     }
     else if (opt == 5)
     {
-        ll ans = nums[0];
-        for (int i = 1; i < nums.size(); i++)
-        {
-            ans = ans / nums[i];
-        }
-        cout << ans << "\n";
+        cout << divide(nums) << "\n";
     }
     else
     {
-        cout << "Wrong Option";
+        cout << "Wrong Option\n";
     }
 
     return 0;
